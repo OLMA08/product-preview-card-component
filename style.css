@@ -1,0 +1,136 @@
+:root {
+--darkcyan: hsl(158, 36%, 37%);
+--cream: hsl(30, 38%, 92%);
+
+--verydark-blue: hsl(212, 21%, 14%);
+--darkgrayish-blue: hsl(228, 12%, 48%);
+--white: hsl(0, 0%, 100%);
+}
+* {
+  padding: 0;  
+  margin: 0;    
+}
+/*
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*/
+html, body {
+  height: 100%;
+   
+}
+/*höhe einer Textzeile - Abstand zwischen den texzeilem 1,7 mal so groß wie die höhe des verwendeten Schritzeiechen*/
+body {
+  /*line-height: 1.8;
+
+  -webkit-font-smoothing: antialiased;/*???*/
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500px;
+  font-size: 14px; /*schrift größe*/ 
+  color: var(--darkgrayish-blue); /*schriftfarbe grau-blau*/
+  background-color: var(--cream);/*hintergrundfarbe*/
+  display: grid; /*kommt in die mitte*/
+  place-content: center; /*kommplettes bild mit text kommt in die mitte*/
+  margin: 1rem;
+}
+img, picture {
+  display: block;
+  max-width: 100%; /* größe vom bild**/
+  border-radius: 20px;
+
+  }
+.btn button {
+  font: inherit;
+  color: var(--white); /*Button text Farbe*/
+}
+button {
+  cursor: pointer; 
+  padding: 0.5em 1.5em; /*größe Rahemn Button*/
+  border: 0;
+  border-radius: .5rem;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darkgrayish-blue); /*farbe Button innen*/
+  
+}
+button:is(:hover,:focus){
+  background-color: var(--darkcyan);
+}
+  p, h1, h2 {
+  overflow-wrap: break-word
+  }
+
+
+.product{
+  display: grid;
+  padding: 20px;
+  background-color: var(--white); /*aussen cream innen weiss */
+  border-radius: 12px; /*Rahmen rund der weisse*/
+  overflow: hidden;
+  max-width: 600px; /*größe des inneren Rahmens*/
+  
+}
+
+/*so bald größer als 600 - rückt der text nach rechts neben bild*/
+@media (min-width: 600px){
+  .product{
+      grid-template-columns: 1fr 1fr;   
+      display: grid;
+      grid-gap: 1rem;
+      align-items: center;
+  }
+  .product img
+  .product picture  {
+    max-width: 600px;
+    height: auto;
+    grid: 1rem;
+  }
+}
+
+.product-content {
+  display: grid;
+  gap: 11px;
+  padding: 20px; /*Text Abstabnd vom Bild von links nach rechts*/
+  
+}
+.product-text {
+  text-transform: uppercase; /*groß BUCHSTABEN PERFUME*/
+  letter-spacing: 5px; /*Abstand von Buchstabe zu buchstabe -- >langgezogen*/
+  font-size: .8rem; /*schrift größe */
+
+}
+.product-name { 
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--verydark-blue);  /*schrift Farbe Gabrielle Essence ...*/
+ 
+}
+.price-group {
+  display: flex; /*so rücken die Zahlen nebeneinader*/
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center; /*die zahl rückt mittig ins zentrum */
+  font-size: 15px; /*schrift Größe ---> NEUE PREISE - new Price*/
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--darkgrayish-blue);
+  padding: 2px;
+}
+.new-price {
+  color: var(--darkcyan);
+  font-size: 30px;
+}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    padding: 6px;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
